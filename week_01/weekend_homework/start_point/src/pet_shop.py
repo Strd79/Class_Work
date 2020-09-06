@@ -71,11 +71,16 @@ def customer_can_afford_pet(customer, pet):
         return False
 
 def sell_pet_to_customer(pet_shop, pet, customer):
-    pdb.set_trace()
-    if find_pet_by_name(pet_shop, pet) == True:
+    # pdb.set_trace()
+    # if find_pet_by_name(pet_shop, pet["name"]) != None:
+    if pet:
         if customer_can_afford_pet(customer, pet) == True:
-            remove_pet_by_name(pet_shop, pet)
-            increase_pets_sold(pet_shop, get_customer_pet_count(customer))
             add_pet_to_customer(customer, pet)
-            remove_customer_cash(customer, amount)
-            add_or_remove_cash(pet_shop, num_1)
+            remove_pet_by_name(pet_shop, pet["name"])
+            increase_pets_sold(pet_shop, get_customer_pet_count(customer))
+            remove_customer_cash(customer, pet["price"])
+            add_or_remove_cash(pet_shop, pet["price"])
+        else:
+            print("Customer cannot afford this pet")
+    else:
+        print("Pet not found!")
