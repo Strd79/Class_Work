@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body > header {
+    padding: 25px;
+    display: flex;
+    background-color: dodgerblue;
+    color: white;
+    justify-content: space-between;
+}
+
+body > header > h1 {
+    padding-left: 16px;
+}
+
+body > header > nav {
+    text-align: right;
+}
+
+body > header > nav > ul {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    list-style: none;
+    align-items: center;
+} 
+
+body > header > nav > ul > li > a {
+    padding-right: 10px;
+    color: white;
+}
+
+body > main > aside {
+    display: inline-block;
+}
+
+body > main > article {
+    margin: auto;
+    width: 60%;
+}
+
+body > footer {
+    padding: 20px;
+    text-align: center;
+    background-color: dodgerblue;
+    color: white;
+}
+

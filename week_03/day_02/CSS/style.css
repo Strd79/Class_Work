@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: Kufam, sans-serif;
+}
+
+body > footer {
+    background-color: dodgerblue;
+}
+
+body > footer > p {
+    padding: 16px;
+    color: white;
+    text-align: center;
+}
+
+#logo {
+    margin: 0;
+}
+
+nav > ul {
+    list-style: none;
+}
+
+nav > ul > a {
+    color: white;
+    text-decoration: none;
+}
+
+body > main > article {
+    margin: auto;
+    width: 70%
+}
+
+.like-button {
+    background-color: transparent;
+    border: 1px solid dodgerblue;
+}
+
+.share-button {
+    background-color: transparent;
+    border: 1px solid green;
+}
