@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>My To Do List!</h1>
+    <form action="/add-task" method="post">
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title"><br><br>
+        <label for="description">Description</label><br>
+        <textarea name="description" cols="30" rows="2"></textarea><br><br>
+        <input type="submit" value="Add Task">
+    </form>
+    {% for task in tasks %}
+    <div>
+        <p>{{ task.title }}: <b>{{ task.description }}</b>
+        {% if task.done %}
+        <span>&#9989;</span>
+        {% endif %}
+        </p>
+    </div>
+    {% endfor %}
+{% endblock %}

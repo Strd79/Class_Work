@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main>
+    <h1>Events List</h1>
+    <p>Check out our list of events below:</p>
+    {% for event in events %}
+    <section id="list">
+        <ul>
+            <li>
+                <ul>
+                    <li><h3>{{ event.date }} - {{ event.event_name }} 
+                        {% if event.recurring %}
+                        <span>&#11088;</span>
+                        {% endif %}</h3></li> 
+                    <li><b>Number of guests:</b> {{ event.num_of_guests }}</li>
+                    <li><b>Room location:</b> {{ event.room_location }}</li>
+                    <li><b>Description:</b> "{{ event.description }}"</li>
+                    <form action="/remove-event/{{ event.event_name }}" method="POST">
+                        <input type="submit" name="delete" value="Delete event">
+                    </form>
+                </ul>
+            </li>
+        </ul>
+    </section>
+    {% endfor %}
+    <section id="form">
+        <h2>Would you like to add a new event?</h2>
+        <p>Please complete the following form to add a new event to our events list fore 2020.</p>
+        <form action="/add-event" method="POST">
+            <label for="date">Date of event:</label><br>
+            <input type="date" name="date" id="date"><br><br>
+            <label for="name">Event Name:</label><br>
+            <input type="text" name="name" id="name"><br><br>
+            <label for="num_of_guests">Number of Guests:</label><br>
+            <input type="number" name="num_of_guests" id="num_of_guests"><br><br>
+            <label for="room">Room Location:</label><br>
+            <input type="text" name="room" id="room"><br><br>
+            <label for="description">Description of event:</label><br>
+            <textarea name="description" cols="50" rows="3" value="Type a short description of your event here..."></textarea><br>
+            <label for="room">Recurring event </label>
+            <input type="checkbox" name="recurring" id="recurring"><br><br>
+            <input type="reset" value="Reset form">
+            <input type="submit" value="Add event">
+        </form>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,35 @@
+body {
+    background-color: darkcyan;
+    margin: 0;
+}
+
+header {
+    background-color: darkgoldenrod;
+    margin: 0;
+    padding-left: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+header ul {
+    display: flex;
+    align-items: center;
+    
+}
+
+header li {
+    padding-right: 15px;
+    list-style: none;
+}
+
+main {
+    padding: 25px;
+}
+
+section {
+    display: flex;
+}
+
+#list  li {
+    list-style: none;
+}
