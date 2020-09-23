@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form action="/tasks/{{ task.id }}" method="POST">
+    <div>
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" value="{{ task.description }}" required autofocus>
+    </div>
+    <div>
+      <label for="duration">Duration:</label>
+      <input type="number" id="duration" name="duration" value="{{ task.duration }}" required>
+    </div>
+    <div>
+      <label for="completed">Completed:</label>
+      <select id="completed" name="completed">
+              <option value="" disabled>Select an option</option>
+        <option value="true" {% if task.completed %} selected="selected" {% endif %}>
+          True
+        </option>
+        <option value="false" {% if not task.completed %} selected="selected" {% endif %}>
+          False
+        </option>
+      </select>
+    </div>
+    <div>
+      <label for="user">User:</label>
+      <select id="user" name="user_id">
+        <option value="" disabled>Select user</option>
+        {% for user in all_users %} 
+          <option value="{{ user.id }}" {% if user.id == task.user.id %} selected="selected" {% endif %}>
+            {{ user.first_name }}
+          </option>
+        {% endfor %}
+      </select>
+    </div>
+    <button type="submit">Update Task</button>
+  </form>
+
+{% endblock %}
