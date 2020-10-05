@@ -27,9 +27,10 @@ main {
 }
 
 section {
-    display: flex;
+    display: grid;
 }
 
-#list  li {
+#list > ul > li > ul > li {
     list-style: none;
 }
+
