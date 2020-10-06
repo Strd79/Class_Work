@@ -1,0 +1,15 @@
+{
+  "name": "taxi_testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "taxi.js",
+  "scripts": {
+    "test": "mocha specs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^8.1.3"
+  }
+}
