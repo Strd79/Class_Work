@@ -1,8 +1,8 @@
 {
-  "name": "hw_fundamentals_jurassic_park_end",
+  "name": "lab_enumeration_callbacks_films_end",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "mocha specs"
   },
