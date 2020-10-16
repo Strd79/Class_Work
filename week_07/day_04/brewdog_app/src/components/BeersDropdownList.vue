@@ -1,5 +1,5 @@
 <template lang="html">
-  <div>
+  <div id="beerDropdown">
     <label for="beer-list">Pick a beer punk!</label>
     <select v-on:change="handleSelection" v-model="selectedBeer" id="beer-list">
         <option value="" disabled>Pick a beer punk!</option>
@@ -28,5 +28,19 @@ export default {
 </script>
 
 <style>
+
+#beerDropdown {
+    display: flex;
+    flex-direction: column;
+}
+
+select {
+    width: 20%;
+    margin: auto;
+}
+
+label {
+    margin-bottom: 10px;
+}
 
 </style>
