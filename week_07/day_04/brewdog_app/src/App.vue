@@ -1,10 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/brewdog_logo.jpeg">
-    <h1>Brewdog Beers App</h1>
-    <beers-dropdown-list :beers='beers'></beers-dropdown-list>
-    <beer-details :beer='selectedBeer' :favouriteBeers='favouriteBeers'></beer-details>
-    <favourite-beers :beers='favouriteBeers'></favourite-beers>
+    <div id="header">
+      <img id ="logo" alt="BrewDog logo" src="./assets/brewdog_logo.jpeg">
+      <h1>Brewdog Beers App</h1>
+    </div>
+    <div id="dropdown">
+      <beers-dropdown-list :beers='beers'></beers-dropdown-list>
+      <beer-details :beer='selectedBeer' :favouriteBeers='favouriteBeers'></beer-details>
+      <favourite-beers :beers='favouriteBeers'></favourite-beers>
+    </div>
   </div>
 </template>
 
@@ -59,4 +63,18 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+  #beerDetails {
+    margin-top: 50px;
+  }
+
+  #header {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  #logo {
+    height: 140px;
+  }
+
 </style>

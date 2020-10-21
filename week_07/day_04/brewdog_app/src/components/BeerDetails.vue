@@ -1,6 +1,11 @@
 <template>
   <div id="beerDetails">
-      <div>
+      <div id="beer-pic">
+        <img :src="beer.image_url" :alt="beer.name" class="large_image"><br>
+        <button v-if="favouriteBeers.indexOf(beer) == -1" v-on:click="handleClick">Add to favourites</button>
+        <p v-if="favouriteBeers.indexOf(beer) !== -1">One of your favourites!</p>
+      </div>
+      <div id="details">
         <h2>Get to know: "{{ beer.name }}"</h2>
         <p class="tagline">"{{ beer.tagline }}"</p>
         <p>ABV: <strong>{{ beer.abv }}</strong><span v-if="beer.abv > 5 && beer.abv <=10">, It's a strong one!</span><span v-if="beer.abv > 10">, It's a <u>REALLY</u> strong one!</span></p>
@@ -10,11 +15,6 @@
         <ul>
             <li v-for="(food, index) of beer.food_pairing" :key="index">{{ food }}</li>
         </ul>
-      </div>
-      <div>
-        <img :src="beer.image_url" :alt="beer.name" class="large_image"><br>
-        <button v-if="favouriteBeers.indexOf(beer) == -1" v-on:click="handleClick">Add to favourites</button>
-        <p v-if="favouriteBeers.indexOf(beer) !== -1">One of your favourites!</p>
       </div>
   </div>
 </template>
@@ -35,7 +35,7 @@ export default {
 
 <style>
 li {
-    list-style: none;
+    list-style: square;
 }
 
 .large_image {
@@ -49,6 +49,14 @@ li {
 
 #description {
 max-width: 500px;
+}
+
+#details {
+    text-align: left;
+}
+
+#beer-pic {
+    margin: 50px 0;
 }
 
 </style>

@@ -2,7 +2,7 @@
   <div v-if="beers.length > 0">
       <h2>Favourite beers:</h2>
       <ul>
-          <li v-for="(beer, index) in beers" :key="index">
+          <li class="favBeer" v-for="(beer, index) in beers" :key="index">
               <h3>{{ beer.name }}</h3>
               <img :src="beer.image_url" :alt="beer.name" class="small_image"><br>
               <button v-on:click="handleClick(beer)">Delete this beer</button>
@@ -37,5 +37,9 @@ export default {
 
 button {
     margin-left: 10px;
+}
+
+.favBeer {
+    list-style: none;
 }
 </style>
